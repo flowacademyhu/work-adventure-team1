@@ -10,7 +10,7 @@ const generateMap = (width, height) => {
 const fillMap = (arr) => {
   for (let i = 0; i < arr.length; i++) {
     for (let j = 0; j < arr[i].length; j++) {
-      const coordinate = { x: i, y: j, name: 'Koordinátán állsz!' };
+      const coordinate = { x: (i + 1), y: (j + 1), name: 'Koordinátán állsz!' };
       arr[i][j] = coordinate;
     }
   }
