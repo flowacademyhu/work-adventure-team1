@@ -1,7 +1,6 @@
 let isInitialised = false;
 let character = {};
 const moving = (arr, direction, initialLocation) => {
-  console.log(isInitialised);
   if (!isInitialised) {
     character = arr[initialLocation.x][initialLocation.y];
     isInitialised = true;
