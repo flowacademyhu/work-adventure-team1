@@ -4,7 +4,6 @@ const moving = (arr, direction, initialLocation) => {
   if (!isInitialised) {
     character = arr[initialLocation.x][initialLocation.y];
     isInitialised = true;
-    return;
   }
   const coordinates = () => {
     console.log(`Az X:${character.x}, Y:${character.y} ${character.name}`);
