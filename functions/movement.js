@@ -1,9 +1,11 @@
+const context = require('./context');
 let isInitialised = false;
 let character = {};
 const moving = (arr, direction, initialLocation) => {
   if (!isInitialised) {
     character = arr[initialLocation.x][initialLocation.y];
     isInitialised = true;
+    context.con(character);
   }
   const coordinates = () => {
     console.log(`Az X:${character.x}, Y:${character.y} ${character.name}`);
@@ -17,6 +19,7 @@ const moving = (arr, direction, initialLocation) => {
           character = arr[i][j];
           arr[i][j] = character; // We add a character to the desired location
           coordinates();// Let's check where we are standing.
+          context.con(character);
           return;
         }
       }
@@ -29,6 +32,7 @@ const moving = (arr, direction, initialLocation) => {
           character = arr[i][j];
           arr[i][j] = character;
           coordinates();
+          context.con(character);
           return;
         }
       }
@@ -41,7 +45,8 @@ const moving = (arr, direction, initialLocation) => {
           character = arr[i][j];
           arr[i][j] = character;
           coordinates();
-          return;
+          context.con(character);
+          return character;
         }
       }
     }
@@ -53,12 +58,13 @@ const moving = (arr, direction, initialLocation) => {
           character = arr[i][j];
           arr[i][j] = character;
           coordinates();
-          return;
+          context.con(character);
+          return character;
         }
       }
     }
   }
-  console.log(`Az X:${character.x}, Y:${character.y} ${character.name}`);
+  return context.returnCon();
 };
 module.exports = {
   mov: moving
