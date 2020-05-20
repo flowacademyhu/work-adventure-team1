@@ -16,15 +16,16 @@ const fillMap = (arr) => {
   }
 };
 
-const placeCaracter = (arr) => {
-  const rbl = arr[Math.floor(Math.random() * arr.length)][Math.floor(Math.random() * arr[0].length)];
-  const basicLocation = { rbl };
+const placeCharacter = (arr) => {
+  const x = Math.floor(Math.random() * arr.length);
+  const y = Math.floor(Math.random() * arr[0].length);
+  const basicLocation = { x, y };
   return basicLocation;
 };
 
 module.exports = {
   generateMap,
   fillMap,
-  placeCaracter
+  placeCharacter
 
 };
