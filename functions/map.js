@@ -14,10 +14,6 @@ const fillMap = (arr) => {
       arr[i][j] = coordinate;
     }
   }
-  const rbl = arr[Math.floor(Math.random() * arr.length)][Math.floor(Math.random() * arr[0].length)];
-  const basicLocation = rbl.coordinate;
-
-  return basicLocation;
 };
 
 const placeCaracter = (arr) => {
@@ -26,12 +22,9 @@ const placeCaracter = (arr) => {
   return basicLocation;
 };
 
-const test = generateMap(5, 5);
-fillMap(test);
-console.log(placeCaracter(test));
-
 module.exports = {
   generateMap,
-  fillMap
+  fillMap,
+  placeCaracter
 
 };
