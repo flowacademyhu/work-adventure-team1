@@ -1,7 +1,6 @@
 // content comment
 const contentArr = [
-  [
-    {
+      {
       description: '',
       life: true
     },
@@ -105,5 +104,4 @@ const contentArr = [
       description: '',
       life: false
     },
-  ]
 ];
