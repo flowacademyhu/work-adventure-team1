@@ -1,6 +1,7 @@
 const Table = require('cli-table');
 const chalk = require('chalk');
-
+let previousLocationX = null;
+let previousLocationY = null;
 const table = new Table({
   chars: {
     top: '═',
@@ -31,8 +32,18 @@ table.push(
 console.log(table.toString());
 
 const location = (x, y) => {
-  table[x][y] = chalk.bgBlue(table[x][y]);
+//   if (previousLocationX && previousLocationY) {
+//     table[previousLocationX][previousLocationY] = chalk.bgRed(table[previousLocationX][previousLocationY]);
+//   }
+  if (previousLocationY !== null && previousLocationX !== null) {
+    console.log('previous location has been triggered');
+    table[previousLocationX][previousLocationY] = chalk.bgRed(' ');
+  }
+
+  table[x][y] = chalk.bgBlue('O');
   console.log(table.toString());
+  previousLocationX = x;
+  previousLocationY = y;
 };
 
 module.exports = {
