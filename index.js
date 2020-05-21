@@ -1,15 +1,19 @@
 // create main function
 const map = require('./functions/map');
 const moving = require('./functions/movement');
+const contentArr = require('./functions/content');
 
 const main = () => {
   console.log('Hello játékos!');
   const mapArr = map.generateMap(5, 5);
   console.log('Mozgáshoz a következő betűkből válassz ki egyet: w, a, s, d');
 
-  map.fillMap(mapArr);
+  map.fillMap(mapArr, shuffledArr);
   const characterLocation = map.placeCharacter(mapArr);
   console.log(`Az X:${characterLocation.x}, Y:${characterLocation.y} koordinátán állsz!`);
+
+let shuffledArr = '';
+map.shuffledArr(contentArr);
 
   let life = 5;
   console.log(life);
