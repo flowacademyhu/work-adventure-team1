@@ -31,7 +31,7 @@ const fillMap = (arr, shuffledArr) => {
   for (let i = 0; i < arr.length; i++) {
     for (let j = 0; j < arr[i].length; j++) {
       for (let k = 0; k < shuffledArr.length; k++) {
-        const coordinate = { x: (i + 1), y: (j + 1), name: 'Koordinátán állsz!', contet: shuffledArr[k] };
+        const coordinate = { x: (i + 1), y: (j + 1), name: 'Koordinátán állsz!', content: shuffledArr[k] };
         arr[i][j] = coordinate;
       }
     }
