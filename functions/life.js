@@ -1,5 +1,5 @@
-const operationLife = (caracter, life) => {
-  if (caracter.life === false) {
+const operationLife = (character, life) => {
+  if (character.life === false) {
     life = life - 1;
   }
   if (life === 0) {
