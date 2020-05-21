@@ -29,12 +29,7 @@ table.push(
   [21, 22, 23, 24, 25]
 );
 
-console.log(table.toString());
-
 const location = (x, y) => {
-//   if (previousLocationX && previousLocationY) {
-//     table[previousLocationX][previousLocationY] = chalk.bgRed(table[previousLocationX][previousLocationY]);
-//   }
   if (previousLocationY !== null && previousLocationX !== null) {
     console.log('previous location has been triggered');
     table[previousLocationX][previousLocationY] = chalk.bgRed(' ');
