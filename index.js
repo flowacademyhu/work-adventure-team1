@@ -2,6 +2,7 @@
 const map = require('./functions/map');
 const moving = require('./functions/movement');
 const contentArr = require('./functions/content');
+const context = require('./functions/context');
 
 const main = () => {
   console.log('Hello játékos!');
@@ -29,22 +30,22 @@ const main = () => {
     if (key === 'w') {
       console.clear();
       moving.mov(mapArr, key, characterLocation);
-      console.log('Északnak fordultál');
+      console.log(context.returnCon().content.description);
       console.log('LIFE:', life);
     } else if (key === 'a') {
       console.clear();
       moving.mov(mapArr, key, characterLocation);
-      console.log('Nyugatra fordultál');
+      console.log(context.returnCon().content.description);
       console.log('LIFE:', life);
     } else if (key === 's') {
       console.clear();
       moving.mov(mapArr, key, characterLocation);
-      console.log('Délre fordultál');
+      console.log(context.returnCon().content.description);
       console.log('LIFE:', life);
     } else if (key === 'd') {
       console.clear();
       moving.mov(mapArr, key, characterLocation);
-      console.log('Keletre fordultál');
+      console.log(context.returnCon().content.description);
       console.log('LIFE:', life);
     }
   });
