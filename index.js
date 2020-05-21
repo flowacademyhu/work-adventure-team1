@@ -6,17 +6,17 @@ const contentArr = require('./functions/content');
 const main = () => {
   console.log('Hello játékos!');
   const mapArr = map.generateMap(5, 5);
+  const shuffledArr = map.shuffleArr(contentArr.contentArr);
+  const life = 5;
+
   console.log('Mozgáshoz a következő betűkből válassz ki egyet: w, a, s, d');
+  console.log('LIFE:', life);
 
   map.fillMap(mapArr, shuffledArr);
+
   const characterLocation = map.placeCharacter(mapArr);
-  console.log(`Az X:${characterLocation.x}, Y:${characterLocation.y} koordinátán állsz!`);
 
-let shuffledArr = '';
-map.shuffledArr(contentArr);
-
-  let life = 5;
-  console.log(life);
+  // console.log(`Az X:${characterLocation.x}, Y:${characterLocation.y} koordinátán állsz!`);
 
   const stdin = process.stdin;
   stdin.setRawMode(true);
@@ -29,23 +29,23 @@ map.shuffledArr(contentArr);
     if (key === 'w') {
       console.clear();
       moving.mov(mapArr, key, characterLocation);
-      console.log('Északra fordultál');
-      console.log(life);
+      console.log('Északnak fordultál');
+      console.log('LIFE:', life);
     } else if (key === 'a') {
       console.clear();
       moving.mov(mapArr, key, characterLocation);
       console.log('Nyugatra fordultál');
-      console.log(life);
+      console.log('LIFE:', life);
     } else if (key === 's') {
       console.clear();
       moving.mov(mapArr, key, characterLocation);
       console.log('Délre fordultál');
-      console.log(life);
+      console.log('LIFE:', life);
     } else if (key === 'd') {
       console.clear();
       moving.mov(mapArr, key, characterLocation);
       console.log('Keletre fordultál');
-      console.log(life);
+      console.log('LIFE:', life);
     }
   });
 };
