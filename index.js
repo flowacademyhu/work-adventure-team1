@@ -1,15 +1,23 @@
 // create main function
 const map = require('./functions/map');
 const moving = require('./functions/movement');
+const contentArr = require('./functions/content');
 
 const main = () => {
-  console.log('Hello gamer!');
+  console.log('Hello játékos!');
   const mapArr = map.generateMap(5, 5);
-  console.log('To moving type one of the nexts: w, a, s, d');
+  console.log('Mozgáshoz a következő betűkből válassz ki egyet: w, a, s, d');
 
-  map.fillMap(mapArr);
+  map.fillMap(mapArr, shuffledArr);
   const characterLocation = map.placeCharacter(mapArr);
   console.log(`Az X:${characterLocation.x}, Y:${characterLocation.y} koordinátán állsz!`);
+
+let shuffledArr = '';
+map.shuffledArr(contentArr);
+
+  let life = 5;
+  console.log(life);
+
   const stdin = process.stdin;
   stdin.setRawMode(true);
   stdin.resume();
@@ -21,19 +29,23 @@ const main = () => {
     if (key === 'w') {
       console.clear();
       moving.mov(mapArr, key, characterLocation);
-      console.log('You turned North');
+      console.log('Északra fordultál');
+      console.log(life);
     } else if (key === 'a') {
       console.clear();
       moving.mov(mapArr, key, characterLocation);
-      console.log('You turned West');
+      console.log('Nyugatra fordultál');
+      console.log(life);
     } else if (key === 's') {
       console.clear();
       moving.mov(mapArr, key, characterLocation);
-      console.log('You turned South');
+      console.log('Délre fordultál');
+      console.log(life);
     } else if (key === 'd') {
       console.clear();
       moving.mov(mapArr, key, characterLocation);
-      console.log('You turned East');
+      console.log('Keletre fordultál');
+      console.log(life);
     }
   });
 };
