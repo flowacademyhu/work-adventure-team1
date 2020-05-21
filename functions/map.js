@@ -23,17 +23,12 @@ const shuffleArr = (array) => {
   return array;
 };
 
-const test = [1, 2, 3, 4, 5];
-shuffleArr(test);
-console.log(test);
-
 const fillMap = (arr, shuffledArr) => {
+  let m = 0;
   for (let i = 0; i < arr.length; i++) {
     for (let j = 0; j < arr[i].length; j++) {
-      for (let k = 0; k < shuffledArr.length; k++) {
-        const coordinate = { x: (i + 1), y: (j + 1), name: 'Koordinátán állsz!', contet: shuffledArr[k] };
-        arr[i][j] = coordinate;
-      }
+      const coordinate = { x: (i + 1), y: (j + 1), name: 'Koordinátán állsz!', content: shuffledArr[m++] };
+      arr[i][j] = coordinate;
     }
   }
 };
