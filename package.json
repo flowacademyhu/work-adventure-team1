@@ -1,0 +1,28 @@
+{
+  "name": "rettenet_a_foldon",
+  "version": "1.0.0",
+  "description": "This is a very simple text based adventure",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flowacademyhu/work-adventure-team1.git"
+  },
+  "keywords": [
+    "adventure",
+    "text",
+    "based"
+  ],
+  "author": "Team 1 of Flow Work",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/flowacademyhu/work-adventure-team1/issues"
+  },
+  "homepage": "https://github.com/flowacademyhu/work-adventure-team1#readme",
+  "dependencies": {
+    "chalk": "^4.0.0",
+    "cli-table": "^0.3.1"
+  }
+}
