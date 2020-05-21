@@ -22,7 +22,13 @@ const main = () => {
   map.fillMap(mapArr, shuffledArr);
 
   const characterLocation = map.placeCharacter(mapArr);
-
+  const move = (key) => {
+    console.clear();
+    moving.mov(mapArr, key, characterLocation);
+    console.log(context.returnCon().content.description);
+    console.log('LIFE:', mLife);
+    location.location(context.returnCon().x - 1, context.returnCon().y - 1);
+  };
   const stdin = process.stdin;
   stdin.setRawMode(true);
   stdin.resume();
@@ -32,29 +38,13 @@ const main = () => {
       process.exit();
     }
     if (key === 'w') {
-      console.clear();
-      moving.mov(mapArr, key, characterLocation);
-      console.log(context.returnCon().content.description);
-      console.log('LIFE:', mLife);
-      location.location(context.returnCon().x - 1, context.returnCon().y - 1);
+      move(key);
     } else if (key === 'a') {
-      console.clear();
-      moving.mov(mapArr, key, characterLocation);
-      console.log(context.returnCon().content.description);
-      console.log('LIFE:', mLife);
-      location.location(context.returnCon().x - 1, context.returnCon().y - 1);
+      move(key);
     } else if (key === 's') {
-      console.clear();
-      moving.mov(mapArr, key, characterLocation);
-      console.log(context.returnCon().content.description);
-      console.log('LIFE:', mLife);
-      location.location(context.returnCon().x - 1, context.returnCon().y - 1);
+      move(key);
     } else if (key === 'd') {
-      console.clear();
-      moving.mov(mapArr, key, characterLocation);
-      console.log(context.returnCon().content.description);
-      console.log('LIFE:', mLife);
-      location.location(context.returnCon().x - 1, context.returnCon().y - 1);
+      move(key);
     }
     console.log(' ');
 
