@@ -36,25 +36,25 @@ const main = () => {
       moving.mov(mapArr, key, characterLocation);
       console.log(context.returnCon().content.description);
       console.log('LIFE:', mLife);
-      location.location(context.returnCon().x, context.returnCon().y);
+      location.location(context.returnCon().x - 1, context.returnCon().y - 1);
     } else if (key === 'a') {
       console.clear();
       moving.mov(mapArr, key, characterLocation);
       console.log(context.returnCon().content.description);
       console.log('LIFE:', mLife);
-      location.location(context.returnCon().x, context.returnCon().y);
+      location.location(context.returnCon().x - 1, context.returnCon().y - 1);
     } else if (key === 's') {
       console.clear();
       moving.mov(mapArr, key, characterLocation);
       console.log(context.returnCon().content.description);
       console.log('LIFE:', mLife);
-      location.location(context.returnCon().x, context.returnCon().y);
+      location.location(context.returnCon().x - 1, context.returnCon().y - 1);
     } else if (key === 'd') {
       console.clear();
       moving.mov(mapArr, key, characterLocation);
       console.log(context.returnCon().content.description);
       console.log('LIFE:', mLife);
-      location.location(context.returnCon().x, context.returnCon().y);
+      location.location(context.returnCon().x - 1, context.returnCon().y - 1);
     }
     console.log(' ');
 
