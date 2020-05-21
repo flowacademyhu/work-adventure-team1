@@ -1,8 +1,11 @@
-const operationLife = (character, life) => {
-  if (character.life === false) {
-    life = life - 1;
+const operationLife = (character, mlife) => {
+  if (character === false) {
+    mlife = mlife - 1;
   }
-  if (life === 0) {
+};
+
+const invLife = (mlife) => {
+  if (mlife === 0) {
     console.log('Az őrület végleg a hatamába kerített! Nem jutsz ki élve a labirintusból!');
     console.log('KALANDOD VÉGETÉRT!');
     process.exit();
@@ -10,6 +13,7 @@ const operationLife = (character, life) => {
 };
 
 module.exports = {
-  operationLife
+  operationLife,
+  invLife
 
 };

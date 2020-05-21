@@ -3,15 +3,16 @@ const map = require('./functions/map');
 const moving = require('./functions/movement');
 const contentArr = require('./functions/content');
 const context = require('./functions/context');
+const opLife = require('./functions/life');
 
 const main = () => {
   console.log('Hello játékos!');
   const mapArr = map.generateMap(5, 5);
   const shuffledArr = map.shuffleArr(contentArr.contentArr);
-  const life = 5;
+  const mLife = 5;
 
   console.log('Mozgáshoz a következő betűkből válassz ki egyet: w, a, s, d');
-  console.log('LIFE:', life);
+  console.log('LIFE:', mLife);
 
   map.fillMap(mapArr, shuffledArr);
 
@@ -31,23 +32,25 @@ const main = () => {
       console.clear();
       moving.mov(mapArr, key, characterLocation);
       console.log(context.returnCon().content.description);
-      console.log('LIFE:', life);
+      console.log('LIFE:', mLife);
     } else if (key === 'a') {
       console.clear();
       moving.mov(mapArr, key, characterLocation);
       console.log(context.returnCon().content.description);
-      console.log('LIFE:', life);
+      console.log('LIFE:', mLife);
     } else if (key === 's') {
       console.clear();
       moving.mov(mapArr, key, characterLocation);
       console.log(context.returnCon().content.description);
-      console.log('LIFE:', life);
+      console.log('LIFE:', mLife);
     } else if (key === 'd') {
       console.clear();
       moving.mov(mapArr, key, characterLocation);
       console.log(context.returnCon().content.description);
-      console.log('LIFE:', life);
+      console.log('LIFE:', mLife);
     }
+    opLife.operationLife(context.returnCon().content.life, mLife);
+    opLife.invLife(mLife);
   });
 };
 main();
