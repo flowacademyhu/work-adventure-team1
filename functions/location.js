@@ -33,7 +33,6 @@ console.log(table.toString());
 
 const location = (x, y) => {
   table[x][y] = chalk.bgBlue(table[x][y]);
-  console.clear();
   console.log(table.toString());
 };
 
