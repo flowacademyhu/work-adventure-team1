@@ -2,6 +2,8 @@ const Table = require('cli-table');
 const chalk = require('chalk');
 let previousLocationX = null;
 let previousLocationY = null;
+// let previousContent = null;  // This feature is not in use yet. It is used to assign the previous content to the previous location
+let previousLocation = null;
 const table = new Table({
   chars: {
     top: '═',
@@ -31,13 +33,14 @@ table.push(
 
 const location = (x, y) => {
   if (previousLocationY !== null && previousLocationX !== null) {
-    table[previousLocationX][previousLocationY] = chalk.bgRed(' ');
+    table[previousLocationX][previousLocationY] = chalk.bgRed(previousLocation);
   }
-
-  table[x][y] = chalk.bgBlue('O');
+  previousLocation = table[x][y];
+  table[x][y] = chalk.bold.underline.whiteBright.bgBlue(`${table[x][y]}`);
   console.log(table.toString());
   previousLocationX = x;
   previousLocationY = y;
+  // previousContent = returnContext().content.extra;
 };
 
 module.exports = {
