@@ -31,7 +31,6 @@ table.push(
 
 const location = (x, y) => {
   if (previousLocationY !== null && previousLocationX !== null) {
-    console.log('previous location has been triggered');
     table[previousLocationX][previousLocationY] = chalk.bgRed(' ');
   }
 
