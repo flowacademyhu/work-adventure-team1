@@ -28,6 +28,8 @@ const main = () => {
     console.log(context.returnCon().content.description);
     console.log('LIFE:', mLife);
     location.location(context.returnCon().x - 1, context.returnCon().y - 1);
+    opLife.operationLife(context.returnCon().content.life, mLife);
+    opLife.invLife(mLife);
   };
   const stdin = process.stdin;
   stdin.setRawMode(true);
@@ -50,8 +52,6 @@ const main = () => {
 
     console.log('Merre tovább?');
     console.log('Mozgáshoz a következő betűkből válassz ki egyet: w, a, s, d');
-    opLife.operationLife(context.returnCon().content.life, mLife);
-    opLife.invLife(mLife);
   });
 };
 main();
